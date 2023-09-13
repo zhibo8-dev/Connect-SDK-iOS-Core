@@ -189,6 +189,9 @@ static const NSInteger kValueNotFound = -1;
 
 - (void) connect
 {
+    if (self.connected) {
+        [self disconnect];
+    }
 //    NSString *targetPath = [NSString stringWithFormat:@"http://%@:%@/", self.serviceDescription.address, @(self.serviceDescription.port)];
 //    NSURL *targetURL = [NSURL URLWithString:targetPath];
 
@@ -510,7 +513,7 @@ static const NSInteger kValueNotFound = -1;
 
 - (CapabilityPriorityLevel) mediaControlPriority
 {
-    return CapabilityPriorityLevelNormal;
+    return CapabilityPriorityLevelVeryHigh;
 }
 
 - (void)playWithSuccess:(SuccessBlock)success failure:(FailureBlock)failure
@@ -833,7 +836,7 @@ static const NSInteger kValueNotFound = -1;
 
 - (CapabilityPriorityLevel) mediaPlayerPriority
 {
-    return CapabilityPriorityLevelNormal;
+    return CapabilityPriorityLevelVeryHigh;
 }
 
 - (void)displayImage:(NSURL *)imageURL iconURL:(NSURL *)iconURL title:(NSString *)title description:(NSString *)description mimeType:(NSString *)mimeType success:(MediaPlayerDisplaySuccessBlock)success failure:(FailureBlock)failure
@@ -1011,7 +1014,7 @@ static const NSInteger kValueNotFound = -1;
 
 - (CapabilityPriorityLevel) volumeControlPriority
 {
-    return CapabilityPriorityLevelNormal;
+    return CapabilityPriorityLevelVeryHigh;
 }
 
 - (void) volumeUpWithSuccess:(SuccessBlock)success failure:(FailureBlock)failure
@@ -1193,7 +1196,7 @@ static const NSInteger kValueNotFound = -1;
 
 - (CapabilityPriorityLevel) playListControlPriority
 {
-    return CapabilityPriorityLevelNormal;
+    return CapabilityPriorityLevelVeryHigh;
 }
 
 - (void) playNextWithSuccess:(SuccessBlock)success failure:(FailureBlock)failure

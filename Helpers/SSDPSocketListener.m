@@ -95,6 +95,7 @@
 
 - (void)open
 {
+    [self close];
 	int   theSocketDescriptor = socket (PF_INET, SOCK_DGRAM, 0);
     
 	//Create variable to  pass sot socket option setter
